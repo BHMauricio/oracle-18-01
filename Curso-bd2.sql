@@ -19,5 +19,8 @@ create table almacen (numero_almacen integer, ubicacion_almacen varchar2(80),
   
   select * from almacen;
   
+  --Creamos la segunda Tabla 
+  --create table cliente (numero_cliente )
+  
 
 
