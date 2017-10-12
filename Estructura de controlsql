@@ -24,7 +24,17 @@ end;
 /
 
 select * from menores_edad;
---Seleccionar para contar campos 
+--Seleccionar para contar todas las filas de ña tabla menores 
 select count (*) from menores_edad;
 
+--Generar un procedimiento almacenado que nos haga una actualizacion de tal manera que impida que actualice edades menores a 18 años.
+--Debe de marcar un error. 
 
+create or replace procedure actualizar_edad (age in integer, id integer)
+as begin
+if age <18 then raise_application_error(-20001, 'No acepto edades menores a 18.');
+else
+update menores_edad set edad=age where id_menores=id;
+end if;
+end;
+/
