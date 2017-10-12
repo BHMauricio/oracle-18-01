@@ -1,0 +1,30 @@
+
+--create table menores_edad (id_menores integer primary  key,
+--nombre varchar2(60), edad integer);
+
+--Creamos la tabla de menores de edad 
+create table menores_edad (id_menores integer, nombre varchar2(60), edad integer,
+constraint pk_menores primary key (id_menores)
+);
+
+--Generar un procedimiento almacenado que me inserte 1000 registros con id diferente y con un valor del nombre y edad 
+create or replace procedure generar_mil
+as begin
+--generamos los mil (i= indice)(IN = al indice donde va empezar)(end loop; = Cerrar ciclo For)(loop= abrir ciclo for )
+for i IN 1..1000 loop
+insert into menores_edad values (i,'Mauricio',21);
+end loop;
+end;
+/
+
+--Vamos a ejecutar el procedimiento
+begin
+generar_mil();
+end;
+/
+
+select * from menores_edad;
+--Seleccionar para contar campos 
+select count (*) from menores_edad;
+
+
