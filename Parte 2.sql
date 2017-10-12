@@ -49,4 +49,6 @@ create table vendedor (numero_vendedor integer,
   
   --almacen y vendedor
   
+--pk artificial (Estos se generan automaticamente en Oracle se agregan en la tabla ventas por medio de una secuencia )
+  
   
